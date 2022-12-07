@@ -1,0 +1,69 @@
+Request method:	GET
+Request URI:	https://platform.zikzuk.com/customer/api/customer?customerName=Customer%2025
+Proxy:			<none>
+Request params:	<none>
+Query params:	customerName=Customer 25
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Wed, 07 Dec 2022 09:52:52 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+vary: Origin,Access-Control-Request-Method,Access-Control-Request-Headers
+operationtype: getCustomer
+responsetype: success
+x-envoy-upstream-service-time: 1923
+server: istio-envoy
+x-kong-upstream-latency: 1923
+x-kong-proxy-latency: 0
+via: kong/3.0.1
+x-envoy-decorator-operation: kong-api.kong.svc.cluster.local:80/*
+
+{
+    "custId": "497ab182-035b-437c-b453-ec55df928eea",
+    "custName": "Customer 25",
+    "email": "customer25@zikzuk.com",
+    "altEmail": null,
+    "phone": null,
+    "altContact": null,
+    "designation": null,
+    "address": null,
+    "gstNo": null,
+    "website": null,
+    "inTrialPeriod": false,
+    "status": "inactive",
+    "isTerPolAccepted": true,
+    "organisationsList": [
+        {
+            "orgId": "a8c765b2-1fff-4d43-a5b1-ac2206f99fda",
+            "orgName": "Customer 25",
+            "email": "customer25@zikzuk.com",
+            "phone": null,
+            "designation": null,
+            "gstNo": null,
+            "panCard": null,
+            "addressList": null,
+            "cin": null,
+            "website": null,
+            "status": "inactive",
+            "isTaxAppl": null,
+            "isPrimary": false,
+            "confServices": null,
+            "createdDt": "2022-12-07T09:52:51.672+00:00",
+            "updatedDt": "2022-12-07T09:52:51.672+00:00",
+            "createdBy": null,
+            "updatedBy": null
+        }
+    ],
+    "subscriptionList": null,
+    "createdDt": "2022-12-03T11:34:45.883+00:00",
+    "updatedDt": "2022-12-03T11:34:45.883+00:00",
+    "createdBy": null,
+    "updatedBy": null
+}
