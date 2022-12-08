@@ -20,7 +20,7 @@
     #Then the API call got success with status code 200
     #Examples: 
       #| custName  | email                                | isTerPolAccepted      |
-      #| UserOrg2  | bac87041-f1a8-40d6-a6ec-abb49c946cdd | UserOrg2@yopmail.com  |
+      #| UserOrg2  | bac87041-f1a8-40d6-a6ec-abb49c946cdd | UserOrg2@yopmail.cos  |
       #| UserOrg3  | f056954e-3ffc-4a89-a9ce-92199209fb4c | UserOrg3@yopmail.com  |
       #| UserOrg4  | f4311204-f349-4a36-b0af-74cfd5e00ae4 | UserOrg4@yopmail.com  |
       #| UserOrg5  | 2e0acf5b-9d1e-40d7-8b12-580766e48f35 | UserOrg5@yopmail.com  |
