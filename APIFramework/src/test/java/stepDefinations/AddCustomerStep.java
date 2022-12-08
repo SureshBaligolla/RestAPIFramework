@@ -33,7 +33,6 @@ public class AddCustomerStep extends Utils {
 	CustomerBuild data = new CustomerBuild();
 	static String custName;
 	static String custId;
-	
 
 	@Given("Add Customer Payload with {string} {string} {string}")
 	public void add_Customer_Payload_with(String name, String email, String isTerPolAccepted) throws IOException {
@@ -72,53 +71,57 @@ public class AddCustomerStep extends Utils {
 	public void in_response_body_is(String keyValue, String Expectedvalue) {
 		// Write code here that turns the phrase above into concrete actions
 
-		/*
-		 * String actualName = getJsonPath(response, keyValue);
-		 * System.out.println("ActualValue = " + actualName + "--->" +
-		 * "ExpectedValue = " + Expectedvalue); assertEquals(actualName, Expectedvalue);
-		 * 
-		 * 
-		 */
 		String actualName1 = getJsonPath(response, keyValue);
-		System.out.println(Expectedvalue+"="+ actualName1);
+		System.out.println(Expectedvalue + "=" + actualName1);
+		custId = getJsonPath(response, "custId");
 
 	}
-	
+
 	@Given("GetCustomer Payload")
 	public void getcustomer_Payload() throws IOException {
-	
+
 		System.out.println("Checking Payload ......");
 		res = given().spec(requestSpecification());
 		System.out.println(res.toString());
 	}
-	
-	
+
 	@When("user call {string} {string} with {string} http request")
-	public void user_call_with_http_request(String resource,String Query , String method) {
-
+	public void user_call_with_http_request(String resource, String Quer, String method) {
 		APIResources resourceAPI = APIResources.valueOf(resource);
-		System.out.println(resourceAPI.getResource());
-
-		//resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-
+		System.out.println(resourceAPI.getResource() + Quer);
 		if (method.equalsIgnoreCase("POST"))
 			response = res.when().post(resourceAPI.getResource());
 		else if (method.equalsIgnoreCase("GET"))
-			response = res.when().queryParam("customerName", Query).get(resourceAPI.getResource());
+			response = res.when().get(resourceAPI.getResource() + Quer);
 
+		System.out.println(response.asString());
+	}
+
+	@Given("^Add Customer \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
+	public void add_customer_something_something_something(String custname, String id, String isterpolaccepted)
+			throws Throwable {
+
+		UserRegistrationSuccessful(custname, id, isterpolaccepted);
+
+	}
+
+	@Given("DeletePlace Payload")
+	public void deleteplace_Payload() throws IOException {
+
+		System.out.println("Checking Payload ......");
+		res = given().spec(requestSpecification());
+		System.out.println(res.toString());
+
+	}
+
+	@When("user calls the {string} with delete http request")
+	public void user_calls_the_with_delete_http_request(String resource) {
+		// Write code here that turns the phrase above into concrete actions
+
+		APIResources resourceAPI = APIResources.valueOf(resource);
+		System.out.println(resourceAPI.getResource());
+		response = res.when().delete(resourceAPI.getResource() + custId);
 		System.out.println(response.asString());
 
 	}
-	
-	
-	
-	
-	  @Given("^Add Customer \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	    public void add_customer_something_something_something(String custname, String id, String isterpolaccepted) throws Throwable {
-	        
-		  
-		  UserRegistrationSuccessful(custname, id, isterpolaccepted);
-		  
-	    }
-
 }

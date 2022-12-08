@@ -29,8 +29,9 @@ public class StepDefination extends Utils {
 	ResponseSpecification resspec;
 	Response response;
 	TestDataBuild data = new TestDataBuild();
-	static String place_id;
 	/*
+	 * static String place_id;
+	 * 
 	 * @Given("Add Place Payload with {string}  {string} {string}") public void
 	 * add_Place_Payload_with(String name, String language, String address) throws
 	 * IOException { // Write code // here that // turns the // phrase // above //
@@ -91,4 +92,5 @@ public class StepDefination extends Utils {
 	 * given().spec(requestSpecification()).body(data.deletePlacePayload(place_id));
 	 * }
 	 */
+	 
 }

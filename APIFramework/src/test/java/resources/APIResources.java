@@ -5,7 +5,8 @@ public enum APIResources {
 	AddPlaceAPI("/customer/api/customer?"),
 	AddPlaceAPI1("/customer/api/customer?"),
 	GetCustName("/customer/api/customer?customerName="),
-	deletePlaceAPI("/maps/api/place/delete/json"),
+	GetCustemail("/customer/api/customer?email="),
+	deletePlaceAPI("/customer/api/customer/"),
 	AddCustomer("/customer/api/customer?"+"defaultUser=true&defaultOrg=true");
 	
 	
